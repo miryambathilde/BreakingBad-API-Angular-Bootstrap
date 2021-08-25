@@ -1,1 +1,7 @@
-<p>lista-personajes works!</p>
+<section class="container">
+  <div class="row g-4">
+    <article class="col-12 col-md-6 col-lg-4" *ngFor="let character of characters">
+      <app-thumbnail [miCharacter]="character"></app-thumbnail>
+    </article>
+  </div>
+</section>

@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaPersonajesComponent } from './components/lista-personajes/lista-personajes.component';
 import { PersonajeComponent } from './components/personaje/personaje.component';
+import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
+import { C404Component } from './components/c404/c404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaPersonajesComponent,
-    PersonajeComponent
+    PersonajeComponent,
+    ThumbnailComponent,
+    C404Component
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Character } from "./interfaces/character.interface";
+import { CharacterService } from "./services/character.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BreakingBad';
+
+  characters: Character[] = [];
+
+  constructor(private characterService: CharacterService) { }
+
+  ngOnInit() {
+  //Cuando cargamos el componente pedimos los datos al servicio. Inyectamos y llamamos al servicio
+    this.characterService.getAll()
+      .then((response: Character[]) => {
+        this.characters = response;
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 }

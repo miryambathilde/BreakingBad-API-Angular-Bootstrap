@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Character } from "src/app/interfaces/character.interface";
+import { CharacterService } from "src/app/services/character.service";
 
 @Component({
   selector: 'app-lista-personajes',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPersonajesComponent implements OnInit {
 
-  constructor() { }
+  characters: Character[] = [];
+  constructor(private characterService: CharacterService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<any> {
+    this.characters = await this.characterService.getAll();
   }
 
 }
