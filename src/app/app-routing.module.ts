@@ -7,6 +7,7 @@ import { PersonajeComponent } from "./components/personaje/personaje.component";
 const routes: Routes = [
   { path: '', pathMatch: "full", redirectTo: '/home'},
   { path: 'home', component: ListaPersonajesComponent },
+  { path: 'search/:name', component: ListaPersonajesComponent },
   { path: 'character/:idcharacter', component: PersonajeComponent },
   { path: '**', component: C404Component}
 ];

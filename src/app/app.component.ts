@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Character } from "./interfaces/character.interface";
-import { CharacterService } from "./services/character.service";
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,13 @@ import { CharacterService } from "./services/character.service";
 })
 export class AppComponent {
 
-  characters: Character[] = [];
+  search: string = '';
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private router: Router){}
 
-  ngOnInit() {
-  //Cuando cargamos el componente pedimos los datos al servicio. Inyectamos y llamamos al servicio
-    this.characterService.getAll()
-      .then((response: Character[]) => {
-        this.characters = response;
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+  onClick() {
+    this.router.navigate(['/search', this.search]);
+    this.search = '';
+    //console.log(this.search);
   }
 }

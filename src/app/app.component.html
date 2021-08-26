@@ -1,4 +1,17 @@
-<header>
-  <!-- filtros -->
+<header class="d-flex justify-content-between p-4 bg-dark mb-4">
+  <figure class="logo" [routerLink]="'/home'">
+    <img src="../assets/images/logo.png" alt="">
+  </figure>
+  <div class="d-flex">
+    <input type="text" class="form-control" placeholder="Insert a name" [(ngModel)]="search">
+    <button (click)="onClick()" class="btn btn-warning ms-3">Search</button>
+  </div>
+  <div>
+    <select class="form-select">
+      <option value="">Select a category</option>
+      <option value="Beter Call Saul">Better Call Saul</option>
+      <option value="Breaking Bad">Breaking Bad</option>
+    </select>
+  </div>
 </header>
 <router-outlet></router-outlet>

@@ -12,14 +12,17 @@ export class CharacterService {
     this.baseUrl = 'https://www.breakingbadapi.com/api/characters/';
   }
 
-  getAll() : Promise<Character[]> {
+  getAll(): Promise<Character[]> {
     // es una PROMESA y se resuelve con: then-catch o con async-await
     return this.httpClient.get<Character[]>(this.baseUrl).toPromise();
   }
 
   getById(pId: number): Promise<Character[]> {
     console.log(pId);
-    return this.httpClient.get<Character[]>(this.baseUrl + pId).toPromise()
-
+    return this.httpClient.get<Character[]>(this.baseUrl + pId).toPromise();
   }
+
+  getByName(pName: string): Promise<Character[]> {
+  return this.httpClient.get<Character[]>(this.baseUrl + '?name=' + pName).toPromise();
+  };
 }

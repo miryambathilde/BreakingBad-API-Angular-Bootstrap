@@ -8,6 +8,7 @@ import { ListaPersonajesComponent } from './components/lista-personajes/lista-pe
 import { PersonajeComponent } from './components/personaje/personaje.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
 import { C404Component } from './components/c404/c404.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { C404Component } from './components/c404/c404.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
