@@ -8,14 +8,22 @@ import { Router } from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   search: string = '';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
 
   onClick() {
     this.router.navigate(['/search', this.search]);
     this.search = '';
     //console.log(this.search);
+  }
+
+  onSelect($event: any) {
+    if ($event.target.value !== '') {
+      this.router.navigateByUrl('/home' + '?category=' + $event.target.value);
+    } else {
+      this.router.navigate(['/home']);
+    }
+    //console.log($event.target.value);
   }
 }

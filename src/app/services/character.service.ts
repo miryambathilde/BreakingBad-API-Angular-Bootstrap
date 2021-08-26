@@ -23,6 +23,12 @@ export class CharacterService {
   }
 
   getByName(pName: string): Promise<Character[]> {
-  return this.httpClient.get<Character[]>(this.baseUrl + '?name=' + pName).toPromise();
-  };
+    return this.httpClient
+      .get<Character[]>(this.baseUrl + '?name=' + pName)
+      .toPromise();
+  }
+
+  getByCategory(pCategory: string): Promise<Character[]> {
+    return this.httpClient.get<Character[]>(this.baseUrl + '?category=' + pCategory).toPromise();
+  }
 }
