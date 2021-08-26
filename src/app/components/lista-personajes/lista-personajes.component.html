@@ -13,7 +13,7 @@
         <li
           *ngFor="let pag of pagination; let i = index"
           class="page-item"
-          routerLinkActive="router-link-active"
+          routerLinkActive="active"
         >
           <a class="page-link" [routerLink]="['/home', i + 1]">{{ i + 1 }}</a>
         </li>
