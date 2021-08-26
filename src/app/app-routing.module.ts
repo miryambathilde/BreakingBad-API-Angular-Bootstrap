@@ -5,12 +5,13 @@ import { ListaPersonajesComponent } from "./components/lista-personajes/lista-pe
 import { PersonajeComponent } from "./components/personaje/personaje.component";
 
 const routes: Routes = [
-  { path: '', pathMatch: "full", redirectTo: '/home'},
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: ListaPersonajesComponent },
+  { path: 'home/:page', component: ListaPersonajesComponent },
   { path: 'search/:name', component: ListaPersonajesComponent },
   //{ path: 'category/:category', component: ListaPersonajesComponent },
   { path: 'character/:idcharacter', component: PersonajeComponent },
-  { path: '**', component: C404Component}
+  { path: '**', component: C404Component }
 ];
 
 @NgModule({

@@ -1,7 +1,23 @@
 <section class="container mt-4">
   <div class="row g-4">
-    <article class="col-12 col-md-6 col-lg-4" *ngFor="let character of characters">
+    <article
+      class="col-12 col-md-6 col-lg-4"
+      *ngFor="let character of characters"
+    >
       <app-thumbnail [miCharacter]="character"></app-thumbnail>
     </article>
+  </div>
+  <div class="row" *ngIf="mostrarPaginacion">
+    <nav>
+      <ul class="pagination pagination-sm">
+        <li
+          *ngFor="let pag of pagination; let i = index"
+          class="page-item"
+          routerLinkActive="router-link-active"
+        >
+          <a class="page-link" [routerLink]="['/home', i + 1]">{{ i + 1 }}</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </section>

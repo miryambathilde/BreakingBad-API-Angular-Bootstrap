@@ -31,4 +31,9 @@ export class CharacterService {
   getByCategory(pCategory: string): Promise<Character[]> {
     return this.httpClient.get<Character[]>(this.baseUrl + '?category=' + pCategory).toPromise();
   }
+
+  // le decimos que por defecto carga siempre la pagina 1
+  getByPage(pPage: number = 1): Promise<Character[]> {
+    return this.httpClient.get<Character[]>(this.baseUrl + `?limit=10&offset=${(pPage - 1)*10}`).toPromise();
+  }
 }
